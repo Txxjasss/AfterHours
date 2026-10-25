@@ -1,0 +1,17 @@
+[10/24/24, 02:14:10 PM] PagerDuty: [ALERT P1] High p99 latency (>3200ms) on checkout-api cluster us-east-1.
+[10/24/24, 02:15:02 PM] Maya Chen (SRE): Acked. Investigating checkout-api pods right now.
+[10/24/24, 02:16:30 PM] Maya Chen (SRE): CPU is normal at 28%, but memory utilization is spiking past 92% on three worker nodes.
+[10/24/24, 02:17:45 PM] Liam Patel (Backend): Looking at recent commits. Did anyone touch the cart session caching in commit e839bf?
+[10/24/24, 02:18:22 PM] Liam Patel (Backend): Just checked the diff. The TTL on guest cart Redis keys was accidentally omitted in the latest PR merge!
+[10/24/24, 02:19:15 PM] DevLead Sarah: Good catch Liam. Let's not rollback the whole release since the payment fixes are critical.
+[10/24/24, 02:20:00 PM] DevLead Sarah: Decision: We will patch the Redis TTL immediately with a 30-minute hotfix rather than reverting.
+[10/24/24, 02:20:45 PM] DevLead Sarah: Liam, can you draft the hotfix branch and push it to CI by 02:45 PM?
+[10/24/24, 02:21:10 PM] Liam Patel (Backend): On it. Will have PR #812 ready in 15 minutes.
+[10/24/24, 02:22:05 PM] Maya Chen (SRE): In the meantime, I am manually evicting expired keys from Redis cluster replica 2 to release 4GB RAM.
+[10/24/24, 02:27:30 PM] Maya Chen (SRE): Memory dropped back to 44%. Latency returning to 180ms baseline.
+[10/24/24, 02:35:12 PM] Liam Patel (Backend): PR #812 is up with 20-minute default TTL and automated integration test.
+[10/24/24, 02:37:00 PM] DevLead Sarah: Approved and merged. Maya, please monitor the canary deploy until 03:30 PM.
+[10/24/24, 02:38:15 PM] Maya Chen (SRE): Understood, watching Datadog canary dashboard.
+[10/24/24, 02:40:00 PM] Alex Kim (QA): One question: Why didn't our staging smoke tests catch the missing TTL before deployment?
+[10/24/24, 02:42:10 PM] DevLead Sarah: Good point Alex. Alex, please schedule an incident postmortem meeting for tomorrow at 10:00 AM.
+[10/24/24, 02:43:00 PM] Alex Kim (QA): Will send calendar invites to engineering.

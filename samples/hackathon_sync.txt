@@ -1,0 +1,12 @@
+[10/25/26, 09:00:00 AM] Noah: Good morning team! Hackathon kickoff is in 3 hours. Let's finalize our project scope and stack.
+[10/25/26, 09:01:25 AM] Priya: Morning Noah! I reviewed the prompt: "Build something with open-source AI at its core that saves effort and runs locally".
+[10/25/26, 09:03:10 AM] Noah: Our idea: 'AfterHours' - a local-first briefing tool that parses group chat exports so developers can catch up in 60 seconds without cloud uploads.
+[10/25/26, 09:04:30 AM] Daniel: Love that tagline: 'Your conversations. One useful briefing.'
+[10/25/26, 09:05:45 AM] Daniel: For local inference, are we using Ollama with Qwen2.5 3B or Gemma 2?
+[10/25/26, 09:07:00 AM] Noah: Qwen2.5 3B has incredible structured JSON following and fits in under 2.5GB RAM on laptops.
+[10/25/26, 09:08:15 AM] Noah: Decision: We will use Ollama with Qwen2.5 3B for local structured output and SQLite for conversation persistence.
+[10/25/26, 09:10:00 AM] Noah: Priya, can you build the React + TypeScript frontend with a cinematic dark theme and electric-blue accents?
+[10/25/26, 09:11:15 AM] Priya: Yes! I will complete the initial dashboard, file dropzone, and citation preview drawer by 03:00 PM today.
+[10/25/26, 09:12:40 AM] Daniel: I will build the FastAPI backend, chat regex parsers, and SQLite schema by 02:00 PM today.
+[10/25/26, 09:14:00 AM] Noah: Perfect. I will wire up the Ollama client, Pydantic validation, and write the project README and test suites by 04:00 PM today.
+[10/25/26, 09:15:30 AM] Priya: Question: Does the judging rubric require a live public deployment URL or is a local demo video acceptable?

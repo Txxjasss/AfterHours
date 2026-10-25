@@ -1,0 +1,40 @@
+# Python & Virtual Environments
+venv/
+.venv/
+env/
+backend/venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.pytest_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node / Vite
+node_modules/
+frontend/node_modules/
+dist/
+frontend/dist/
+frontend/.vite/
+
+# Database & Local Storage
+*.db
+*.db-journal
+*.sqlite3
+backend/afterhours.db
+
+# Environment & Secrets
+.env
+.env.*
+*.env
+*.pem
+*.key
+*.cert
+*.pfx
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

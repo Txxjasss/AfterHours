@@ -1,0 +1,12 @@
+[2024-10-23 10:00:15] Carlos (Tech Lead): Welcome everyone to Sprint 42 sync. Our primary milestone is releasing the offline-first sync engine.
+[2024-10-23 10:02:40] Carlos (Tech Lead): Update: The WebSocket sync protocol is fully spec'd out and passed security review.
+[2024-10-23 10:04:10] Elena (Core Eng): Great news. For local storage on the client side, did we decide between IndexedDB wrappers or SQLite via WASM?
+[2024-10-23 10:06:50] Carlos (Tech Lead): We tested both. SQLite WASM had a 4MB bundle penalty, whereas IndexedDB with Dexie is only 40KB and runs faster on mobile browsers.
+[2024-10-23 10:08:00] Carlos (Tech Lead): Decision: We are adopting Dexie (IndexedDB) for local client persistence instead of SQLite WASM.
+[2024-10-23 10:10:25] Marcus (Frontend): Makes total sense. Elena, are you taking the database migration schema?
+[2024-10-23 10:11:00] Elena (Core Eng): Yes, I will write the schema migrations and unit tests. I will complete this by Friday at 4 PM.
+[2024-10-23 10:13:30] Marcus (Frontend): I will build the conflict resolution UI modal for merge discrepancies by Thursday afternoon.
+[2024-10-23 10:15:00] Carlos (Tech Lead): What about our OAuth 2.1 token refresh flow? Has the identity provider updated their discovery endpoints yet?
+[2024-10-23 10:17:20] Elena (Core Eng): Not yet, their support ticket is still pending with no estimated response date.
+[2024-10-23 10:18:00] Carlos (Tech Lead): Decision: Defer OAuth 2.1 token refresh upgrade until Sprint 43 to avoid blocking this release.
+[2024-10-23 10:20:10] Marcus (Frontend): Are we supporting end-to-end encryption for team workspaces in this initial phase or deferring that as well?
