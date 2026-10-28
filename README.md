@@ -8,10 +8,9 @@
 [![Ollama](https://img.shields.io/badge/Local%20AI-Ollama%20%28Qwen2.5%203B%29-black.svg)](https://ollama.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-**Structured Local AI with Source Citations:** Generates executive briefings using a locally running Ollama model (Qwen2.5 3B). Pydantic validates the output structure, while citation checks verify that referenced message IDs exist in the imported transcript. Source citations make claims easier to inspect, though the model's interpretation still requires verification.
+**AfterHours** is a local-first AI assistant that turns busy team chats into concise, actionable briefings.
 
-Import a chat export (`.txt`), inspect the parsed transcript, and generate a concise executive briefing backed by strict, grounded citations linking every update, decision, task, and unanswered question back to original messages.
-
+Import a `.txt` chat export, review the parsed conversation, and generate a briefing covering key updates, decisions, action items, and unanswered questions—with citations linking back to the original messages.
 ---
 
 ## 🎬 Demo
